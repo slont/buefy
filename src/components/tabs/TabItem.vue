@@ -25,7 +25,9 @@
                 this.transitionName = index < oldIndex
                     ? 'slide-next'
                     : 'slide-prev'
-                this.isActive = true
+                this.$nextTick(() => {
+                    this.isActive = true
+                })
             },
 
             /**
@@ -35,7 +37,9 @@
                 this.transitionName = index < oldIndex
                     ? 'slide-next'
                     : 'slide-prev'
-                this.isActive = false
+                this.$nextTick(() => {
+                    this.isActive = false
+                })
             }
         },
         created() {
